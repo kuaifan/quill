@@ -108,3 +108,27 @@ Get help or stay up to date.
 ## License
 
 BSD 3-clause
+
+## 发布 npm 包
+
+```shell
+# 有 nodejs 20+ 环境
+cd packages/quill
+npm install
+
+npm run build
+cd dist
+
+npm publish
+```
+
+```shell
+# 没有 nodejs 20+ 环境
+docker run --rm -it -v $(pwd)/packages/quill:/work -w /work --entrypoint=/bin/bash node:20
+
+npm run build
+cd dist
+
+echo "//registry.npmjs.org/:_authToken={npm_token}" > ~/.npmrc  # npm_token 从 npmjs.com 获取
+npm publish
+```
