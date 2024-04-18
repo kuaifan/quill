@@ -323,11 +323,9 @@ class Quill {
     this.container.classList.toggle('ql-disabled', !enabled);
   }
 
-  focus(options: { preventScroll?: boolean } = {}) {
+  focus() {
     this.selection.focus();
-    if (!options.preventScroll) {
-      this.scrollSelectionIntoView();
-    }
+    this.scrollSelectionIntoView();
   }
 
   format(

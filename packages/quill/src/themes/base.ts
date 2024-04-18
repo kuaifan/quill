@@ -272,7 +272,7 @@ class BaseTooltip extends Tooltip {
   }
 
   restoreFocus() {
-    this.quill.focus({ preventScroll: true });
+    this.quill.focus();
   }
 
   save() {
