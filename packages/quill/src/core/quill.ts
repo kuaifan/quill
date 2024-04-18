@@ -219,6 +219,12 @@ class Quill {
     this.theme.addModule('input');
     this.theme.addModule('uiNode');
     this.theme.init();
+    this.emitter.on(Emitter.events.COMPOSITION_START, () => {
+      this.root.classList.toggle('ql-blank', false);
+    });
+    this.emitter.on(Emitter.events.COMPOSITION_END, () => {
+      this.root.classList.toggle('ql-blank', this.editor.isBlank());
+    });
     this.emitter.on(Emitter.events.EDITOR_CHANGE, (type) => {
       if (type === Emitter.events.TEXT_CHANGE) {
         this.root.classList.toggle('ql-blank', this.editor.isBlank());
