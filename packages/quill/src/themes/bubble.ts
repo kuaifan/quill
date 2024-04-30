@@ -40,7 +40,7 @@ class BubbleTooltip extends BaseTooltip {
           this.root.style.width = '';
           this.root.style.width = `${this.root.offsetWidth}px`;
           const lines = this.quill.getLines(range.index, range.length);
-          if (lines.length === 1) {
+          if (lines.length === 1 || quill.options.bubbleTooltipTop === true) {
             const bounds = this.quill.getBounds(range);
             if (bounds != null) {
               this.position(bounds);

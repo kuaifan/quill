@@ -66,6 +66,7 @@ export interface QuillOptions {
 export interface ExpandedQuillOptions
   extends Omit<QuillOptions, 'theme' | 'formats'> {
   theme: ThemeConstructor;
+  bubbleTooltipTop?: boolean;
   registry: Parchment.Registry;
   container: HTMLElement;
   modules: Record<string, unknown>;
